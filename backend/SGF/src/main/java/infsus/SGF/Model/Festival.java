@@ -1,4 +1,4 @@
-package infsus.SGF;
+package infsus.SGF.Model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

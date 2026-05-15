@@ -1,4 +1,4 @@
-package infsus.SGF;
+package infsus.SGF.Model;
 
 import infsus.SGF.Model.Enum.TipLokacije;
 import jakarta.persistence.*;
