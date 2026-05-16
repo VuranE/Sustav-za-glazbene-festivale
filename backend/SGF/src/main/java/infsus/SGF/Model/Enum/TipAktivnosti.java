@@ -2,15 +2,15 @@ package infsus.SGF.Model.Enum;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tip_aktivnosti")
+@Table(name = "tipaktivnosti")
 public class TipAktivnosti {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tip")
+    @Column(name = "idtip")
     private Integer idTip;
 
-    @Column(name = "opis_tip", nullable = false, unique = true)
+    @Column(name = "opistip", nullable = false, unique = true)
     private String opisTip;
 
     public TipAktivnosti() {

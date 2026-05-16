@@ -21,7 +21,7 @@ public class AktivnostController {
         return ResponseEntity.ok(aktivnostService.fetchAktivnostByID(id));
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("/name/{name}")
     public ResponseEntity<ReturnAktivnostDTO> getFestivalByName(@PathVariable String name){
         return ResponseEntity.ok(aktivnostService.fetchAktivnostByName(name));
     }

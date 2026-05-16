@@ -10,8 +10,8 @@ public class ReturnAktivnostDTO {
     private Integer idAktivnost;
     private LocalDateTime vrijemeAktivnosti;
     private TipAktivnosti tipAktivnosti;
-    private Festival festival;
-    private Lokacija lokacija;
+   // private Festival festival;
+    private String lokacija;
     private String naziv;
 
     public ReturnAktivnostDTO() {
@@ -49,19 +49,19 @@ public class ReturnAktivnostDTO {
         this.tipAktivnosti = tipAktivnosti;
     }
 
-    public Festival getFestival() {
+    /*public Festival getFestival() {
         return festival;
     }
 
     public void setFestival(Festival festival) {
         this.festival = festival;
-    }
+    }*/
 
-    public Lokacija getLokacija() {
+    public String getLokacija() {
         return lokacija;
     }
 
-    public void setLokacija(Lokacija lokacija) {
+    public void setLokacija(String lokacija) {
         this.lokacija = lokacija;
     }
 }

@@ -127,8 +127,9 @@ public class AktivnostServiceImplementation implements AktivnostService {
         dto.setIdAktivnost(akt.getIdAktivnost());
         dto.setVrijemeAktivnosti(akt.getVrijemeAktivnosti());
         dto.setTipAktivnosti(akt.getTipAktivnosti());
-        dto.setFestival(akt.getFestival());
-        dto.setLokacija(akt.getLokacija());
+       // dto.setFestival(akt.getFestival());
+        dto.setLokacija(akt.getLokacija().getOpisLok());
+        dto.setNaziv(akt.getNazivAktivnosti());
         return dto;
     }
 }

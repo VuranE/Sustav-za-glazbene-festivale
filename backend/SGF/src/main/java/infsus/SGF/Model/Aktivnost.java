@@ -16,7 +16,8 @@ public class Aktivnost {
     @Column(name = "vrijemeaktivnosti", nullable = false)
     private LocalDateTime vrijemeAktivnosti;
 
-    @Column(name = "nazivaktivnosti", nullable = false)
+    @Column(name = "nazivaktivnosti" +
+            "", nullable = false)
     private String nazivAktivnosti;
 
     @ManyToOne

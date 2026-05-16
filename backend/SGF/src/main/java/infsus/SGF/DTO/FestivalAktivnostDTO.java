@@ -12,7 +12,7 @@ public class FestivalAktivnostDTO {
     private LocalDateTime vrijemePocetka;
     private LocalDateTime vrijemeKraja;
     private String lokacijaFestivala;
-    private Mapa mapa;
+    private Long mapaID;
     private List<ReturnAktivnostDTO> aktivnosti;
 
     public FestivalAktivnostDTO() {
@@ -74,11 +74,11 @@ public class FestivalAktivnostDTO {
         this.lokacijaFestivala = lokacijaFestivala;
     }
 
-    public Mapa getMapa() {
-        return mapa;
+    public Long getMapaID() {
+        return mapaID;
     }
 
-    public void setMapa(Mapa mapa) {
-        this.mapa = mapa;
+    public void setMapaID(Long mapaID) {
+        this.mapaID = mapaID;
     }
 }

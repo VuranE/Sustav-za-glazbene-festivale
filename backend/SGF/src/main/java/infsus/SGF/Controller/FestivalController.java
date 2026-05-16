@@ -5,8 +5,10 @@ import infsus.SGF.DTO.FestivalDTO;
 import infsus.SGF.Service.FestivalService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/festival")
@@ -26,10 +28,11 @@ public class FestivalController {
 
     @GetMapping("/{id}")
     public ResponseEntity<FestivalDTO> getFestivalByID(@PathVariable Long id){
+        System.out.println("info");
         return ResponseEntity.ok(festivalService.fetchFestivalByID(id));
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("/name/{name}")
     public ResponseEntity<FestivalDTO> getFestivalByName(@PathVariable String name){
         return ResponseEntity.ok(festivalService.fetchFestivalByName(name));
     }
@@ -52,6 +55,7 @@ public class FestivalController {
 
     @GetMapping("/details/{id}")
     public ResponseEntity<FestivalAktivnostDTO> getFestivalDetailsByID(@PathVariable Long id){
+
         return ResponseEntity.ok(festivalService.fetchFestivalDetailsByID(id));
     }
 
