@@ -1,8 +1,8 @@
 package infsus.SGF.Model;
 
-import infsus.SGF.Model.Enum.TipLokacije;
 import jakarta.persistence.*;
 import org.locationtech.jts.geom.Point;
+import infsus.SGF.Model.Enum.TipLokacije;
 
 @Entity
 @Table(name = "lokacija")
@@ -26,8 +26,8 @@ public class Lokacija {
     @Column(name = "opislok", nullable = false, length = 100)
     private String opisLok;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "idtiplok", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "idtiplok", nullable = false)
     private TipLokacije tipLokacije;
 
     @ManyToOne

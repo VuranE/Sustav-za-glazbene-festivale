@@ -1,47 +1,38 @@
-package infsus.SGF.Model;
+package infsus.SGF.DTO;
 
-import jakarta.persistence.*;
+import infsus.SGF.Model.Mapa;
+
 import java.time.LocalDateTime;
+import java.util.List;
 
-@Entity
-@Table(name = "festival")
-public class Festival {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idfestival")
-    private Integer idFestival;
-
-    @Column(name = "nazivfestivala", nullable = false, length = 100)
+public class FestivalAktivnostDTO {
+    private Long id;
     private String nazivFestivala;
-
-    @Column(name = "dobnaskupina")
     private Integer dobnaSkupina;
-
-    @Column(name = "vrijemepocetka", nullable = false)
     private LocalDateTime vrijemePocetka;
-
-    @Column(name = "vrijemekraja", nullable = false)
     private LocalDateTime vrijemeKraja;
-
-    @Column(name = "lokacijafestivala", nullable = false, length = 100)
     private String lokacijaFestivala;
-
-    @ManyToOne
-    @JoinColumn(name = "idmape")
     private Mapa mapa;
+    private List<ReturnAktivnostDTO> aktivnosti;
 
-
-
-    public Festival() {
+    public FestivalAktivnostDTO() {
     }
 
-
-
-    public Integer getIdFestival() {
-        return idFestival;
+    public List<ReturnAktivnostDTO> getAktivnosti() {
+        return aktivnosti;
     }
 
+    public void setAktivnosti(List<ReturnAktivnostDTO> aktivnosti) {
+        this.aktivnosti = aktivnosti;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNazivFestivala() {
         return nazivFestivala;
