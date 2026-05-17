@@ -15,6 +15,7 @@ import infsus.SGF.Repository.TipAktivnostiRepository;
 import infsus.SGF.Service.AktivnostService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -136,5 +137,18 @@ public class AktivnostServiceImplementation implements AktivnostService {
         dto.setLokacija(akt.getLokacija().getOpisLok());
         dto.setNaziv(akt.getNazivAktivnosti());
         return dto;
+    }
+
+    public boolean validirajVrijeme(
+            LocalDateTime pocetak,
+            LocalDateTime kraj,
+            LocalDateTime aktivnost
+    ) {
+        if (pocetak == null || kraj == null || aktivnost == null) {
+            return false;
+        }
+
+        return !aktivnost.isBefore(pocetak)
+                && !aktivnost.isAfter(kraj);
     }
 }

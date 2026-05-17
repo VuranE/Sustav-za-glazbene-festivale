@@ -12,7 +12,6 @@ import infsus.SGF.Repository.FestivalRepository;
 import infsus.SGF.Repository.MapaRepository;
 import infsus.SGF.Service.FestivalService;
 import org.springframework.stereotype.Service;
-import tools.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,7 +163,7 @@ public class FestivalServiceImplementation implements FestivalService {
             details.setAktivnosti(dtos);
             System.out.println("prije returna");
             System.out.println(details.getNazivFestivala());
-            System.out.println(new ObjectMapper().writeValueAsString(details));
+
             return details;
 
         }
