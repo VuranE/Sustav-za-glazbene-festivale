@@ -7,6 +7,7 @@ UPUTE
 2. cd Sustav-za-glazbene-festivale
 
 POKRETANJE FRONTEND SERVERA (potrebno je imati instaliran Node.js verziju 18 ili noviju te npm)
+
 3. cd frontend
 4. npm install
 5. npm run dev
