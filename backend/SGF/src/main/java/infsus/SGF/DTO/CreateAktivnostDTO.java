@@ -15,6 +15,8 @@ public class CreateAktivnostDTO {
     private Long lokacijaID;
     private String naziv;
 
+    private Long idAktivnost;
+
     public CreateAktivnostDTO() {
     }
 
@@ -56,5 +58,13 @@ public class CreateAktivnostDTO {
 
     public void setNaziv(String naziv) {
         this.naziv = naziv;
+    }
+
+    public Long getIdAktivnost() {
+        return idAktivnost;
+    }
+
+    public void setIdAktivnost(Long idAktivnost) {
+        this.idAktivnost = idAktivnost;
     }
 }

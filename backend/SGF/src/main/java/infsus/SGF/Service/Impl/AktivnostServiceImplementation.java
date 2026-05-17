@@ -82,7 +82,7 @@ public class AktivnostServiceImplementation implements AktivnostService {
 
     @Override
     public ReturnAktivnostDTO updateAktivnost(CreateAktivnostDTO updatedAktivnost) {
-        Optional<Aktivnost> akt = aktivnostRepository.findByNazivAktivnosti(updatedAktivnost.getNaziv());
+        Optional<Aktivnost> akt = aktivnostRepository.findById(updatedAktivnost.getIdAktivnost());
         if(akt.isPresent()){
             Aktivnost a = akt.get();
             a.setVrijemeAktivnosti(updatedAktivnost.getVrijemeAktivnosti());
@@ -93,8 +93,13 @@ public class AktivnostServiceImplementation implements AktivnostService {
 
             if(fest.isPresent() && lok.isPresent() && tip.isPresent()){
                 a.setFestival(fest.get());
+                System.out.println(
+                        fest.get()
+                );
                 a.setLokacija(lok.get());
+                System.out.println(lok.get());
                 a.setTipAktivnosti(tip.get());
+                System.out.println(tip.get());
 
                 aktivnostRepository.save(a);
                 //TODO: Promijeni

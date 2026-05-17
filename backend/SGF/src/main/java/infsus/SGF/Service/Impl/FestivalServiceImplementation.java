@@ -73,14 +73,14 @@ public class FestivalServiceImplementation implements FestivalService {
         fest.setNazivFestivala(newFestival.getNazivFestivala());
         fest.setVrijemePocetka(newFestival.getVrijemePocetka());
         festivalRepository.save(fest);
-        //TODO: PROMIJENI
-        return newFestival;
+        return dtoFillInfo(new FestivalDTO(), fest);
     }
 
 
 
     @Override
     public FestivalDTO updateFestival(FestivalDTO updatedFestival) {
+        System.out.println("updateam festival");
         Optional<Festival> fest = festivalRepository.findById(updatedFestival.getId());
         if(fest.isPresent()){
             Festival f = fest.get();
@@ -124,6 +124,11 @@ public class FestivalServiceImplementation implements FestivalService {
         Optional<Festival> fest = festivalRepository.findById(id);
 
         if(fest.isPresent()){
+
+            List<Aktivnost> aktivnosti = aktivnostRepostitory.findAllByFestival(fest.get());
+
+            aktivnostRepostitory.deleteAll(aktivnosti);
+
             FestivalDTO dto = new FestivalDTO();
             festivalRepository.delete(fest.get());
             return dtoFillInfo(dto, fest.get());
