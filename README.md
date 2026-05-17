@@ -1,7 +1,7 @@
 # Sustav-za-glazbene-festivale
 Sustav za glazbene festivale - SGF - Projekt za kolegij Informacijski sustavi
 
-UPUTE
+UPUTE ZA INSTALACIJU I POKRETANJE (Windows)
 
 1. git clone https://github.com/VuranE/Sustav-za-glazbene-festivale.git
 2. cd Sustav-za-glazbene-festivale
@@ -14,7 +14,7 @@ POKRETANJE FRONTEND SERVERA (potrebno je imati instaliran Node.js verziju 18 ili
 
 POKRETANJE BACKEND SERVERA (potrebno je imati instaliranu Java verziju 21)
 
-3. cd backend
+3. cd backend/SGF
 4. mvnw.cmd spring-boot:run
 
 Frontend server pokreće se na portu 5173, a backend server na portu 8081
