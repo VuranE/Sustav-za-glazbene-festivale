@@ -342,7 +342,14 @@ function FestivalPage() {
             <input type="datetime-local" name="vrijemeKraja" value={festival.vrijemeKraja} onChange={handleFestivalChange} />
 
             <input name="lokacijaFestivala" placeholder="Lokacija" value={festival.lokacijaFestivala} onChange={handleFestivalChange} />
-            <input name="idMape" placeholder="ID mape" value={festival.idMape} onChange={handleFestivalChange} />
+            <select
+              name="idMape"
+              value={festival.idMape}
+              onChange={handleFestivalChange}
+            >
+              <option value="">Odaberi mapu</option>
+              <option value="1">1</option>
+            </select>
 
             <button type="submit">Spremi festival</button>
 
