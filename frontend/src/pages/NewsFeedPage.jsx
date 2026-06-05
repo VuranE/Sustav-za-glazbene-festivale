@@ -35,7 +35,7 @@ export default function NewsFeedPage() {
 
     return (
         <div className="newsfeed-page">
-            <h1>Obavijesti</h1>
+            <h1 className="prijava">Obavijesti</h1>
 
             <div className="feed">
                 {notifications.map((notification) => (
