@@ -29,6 +29,12 @@ export default function LoginPage() {
         console.log(response.data);
 
         if (response.data.success) {
+
+            localStorage.setItem(
+                "userType",
+                response.data.type
+            );
+
             if(response.data.type == 3){
                 navigate(`/new-notification/`);
             } else {

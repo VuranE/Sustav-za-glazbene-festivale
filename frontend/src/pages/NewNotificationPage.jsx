@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import "../pages/NewNotificationPage.css"
 
 export default function NewNotificationPage() {
@@ -38,6 +39,31 @@ export default function NewNotificationPage() {
         }
     };
 
+
+    const sendNotification = async () => {
+    try {
+
+        const response = await axios.post(
+            "http://localhost:8081/api/notifications",
+            {
+                title: formData.title,
+                message: formData.message,
+                targetGroup: formData.targetGroup,
+                imageUrl: null
+            }
+        );
+
+        alert("Obavijest uspješno poslana!");
+
+        setShowConfirmation(false);
+
+        console.log(response.data);
+
+    } catch (error) {
+        console.error(error);
+        alert("Greška prilikom slanja obavijesti.");
+    }
+};
     return (
         <div className="notification-page">
             <h1>Kreiranje obavijesti</h1>
@@ -139,10 +165,7 @@ export default function NewNotificationPage() {
             <div className="modal-buttons">
                 <button
                     type="button"
-                    onClick={() => {
-                        console.log("Slanje obavijesti", formData);
-                        setShowConfirmation(false);
-                    }}
+                    onClick={sendNotification}
                 >
                     Pošalji obavijest
                 </button>
