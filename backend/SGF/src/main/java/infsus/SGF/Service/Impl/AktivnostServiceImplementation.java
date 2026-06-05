@@ -102,7 +102,7 @@ public class AktivnostServiceImplementation implements AktivnostService {
                 System.out.println(tip.get());
 
                 aktivnostRepository.save(a);
-                //TODO: Promijeni
+
                 return dtoFillInfoAktivnost(new ReturnAktivnostDTO(), a);
             } else {
                 throw new InputIsNullException("U bazi ne postoji neki od podataka");

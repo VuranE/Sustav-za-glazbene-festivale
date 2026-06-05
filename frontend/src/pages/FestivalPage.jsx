@@ -375,7 +375,7 @@ function FestivalPage() {
                   aktivnosti.map((a) => (
                     <div key={a.idAktivnost}>
 
-                      <strong>Aktivnost #{a.idAktivnost} {a.naziv}</strong>
+                      <strong>Aktivnost {a.naziv}</strong>
 
                       <p>Vrijeme: {a.vrijemeAktivnosti}</p>
                       <p>Tip: {a.tipAktivnosti?.opisTip}</p>
