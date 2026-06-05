@@ -37,6 +37,9 @@ export default function LoginPage() {
 
             if(response.data.type == 3){
                 navigate(`/new-notification/`);
+            } else if(response.data.type == 1) {
+
+                navigate(`/home/`);
             } else {
                 navigate(`/news-feed/`);
             }
